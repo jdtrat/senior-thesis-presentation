@@ -1,0 +1,74 @@
+---
+title: "Senior Thesis"
+subtitle: "subtitle"
+author: "Jonathan D. Trattner"
+date: "date"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    seal: false
+    nature:
+      beforeInit: "my-macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    css: jdtrat.css
+---
+class: inverse center middle
+
+# Senio*R* Thesis
+
+.large[Jonathan Trattner | 05-07-2021]
+
+```{r setup-main, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanExtra)
+xaringanExtra::use_xaringan_extra(include = c("tile_view", "editable", "animate_css", "tachyons", "share_again", "fit_screen", "search", "scribble", "webcam"))
+```
+
+
+```{r meta, echo=FALSE}
+library(metathis)
+metathis::include_meta(
+  meta() %>%
+  meta_general(
+    description = "",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_social(
+    title = "SenioR Thesis",
+    url = "",
+    image = "",
+    image_alt = "",
+    og_type = "website",
+    og_author = "Jonathan David Trattner",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@jdtrat"
+  )
+)
+```
+
+---
+class: inverse center middle
+
+# Hello, World.
+
+???
+  
+
+---
+name: theme
+layout: true
+.my-header[
+]
+
+.my-footer[
+]
+
+---
+class: top center
+.my-header[
+.title[
+Introduction
+]
+]
