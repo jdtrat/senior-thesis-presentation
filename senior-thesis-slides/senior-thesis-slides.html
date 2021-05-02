@@ -10,7 +10,7 @@
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x5deb09355f249f5a4827672ad11d4a2","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"f58f035429c141aabadf4e05dbcfb797","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -70,7 +70,6 @@ class: inverse center middle
 # Hello, World.
 
 ???
-  
 
 ---
 name: theme
@@ -82,12 +81,117 @@ layout: true
 ]
 
 ---
-class: top center
+class: top
 .my-header[
 .title[
-Introduction
+What is R?
 ]
 ]
+
+--
+
+.absolute.left-2.top--1.mt4[
+&lt;svg class = "fl w-40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="724" height="561" viewBox="0 0 724 561"&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id="gradientFill-1" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad"&gt;
+      &lt;stop offset="0" stop-color="rgb(203,206,208)" stop-opacity="1"/&gt;
+      &lt;stop offset="1" stop-color="rgb(132,131,139)" stop-opacity="1"/&gt;
+    &lt;/linearGradient&gt;
+    &lt;linearGradient id="gradientFill-2" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad"&gt;
+      &lt;stop offset="0" stop-color="rgb(39,109,195)" stop-opacity="1"/&gt;
+      &lt;stop offset="1" stop-color="rgb(22,92,170)" stop-opacity="1"/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;path d="M361.453,485.937 C162.329,485.937 0.906,377.828 0.906,244.469 C0.906,111.109 162.329,3.000 361.453,3.000 C560.578,3.000 722.000,111.109 722.000,244.469 C722.000,377.828 560.578,485.937 361.453,485.937 ZM416.641,97.406 C265.289,97.406 142.594,171.314 142.594,262.484 C142.594,353.654 265.289,427.562 416.641,427.562 C567.992,427.562 679.687,377.033 679.687,262.484 C679.687,147.971 567.992,97.406 416.641,97.406 Z" fill="url(#gradientFill-1)" fill-rule="evenodd"/&gt;
+  &lt;path d="M550.000,377.000 C550.000,377.000 571.822,383.585 584.500,390.000 C588.899,392.226 596.510,396.668 602.000,402.500 C607.378,408.212 610.000,414.000 610.000,414.000 L696.000,559.000 L557.000,559.062 L492.000,437.000 C492.000,437.000 478.690,414.131 470.500,407.500 C463.668,401.969 460.755,400.000 454.000,400.000 C449.298,400.000 420.974,400.000 420.974,400.000 L421.000,558.974 L298.000,559.026 L298.000,152.938 L545.000,152.938 C545.000,152.938 657.500,154.967 657.500,262.000 C657.500,369.033 550.000,377.000 550.000,377.000 ZM496.500,241.024 L422.037,240.976 L422.000,310.026 L496.500,310.002 C496.500,310.002 531.000,309.895 531.000,274.877 C531.000,239.155 496.500,241.024 496.500,241.024 Z" fill="url(#gradientFill-2)" fill-rule="evenodd"/&gt;
+&lt;/svg&gt;
+
+]
+
+???
+R is a letter. Between Q and S.
+
+--
+
+.relative.top-2.mt5.left-2.ml5.f2.tl.lh-title.pt7[
+.relative.top-0.pt3[
+is a letter between Q and S.
+]
+]
+
+???
+In computer land, R is what's known as an interpreted, object oriented language. 
+A descendent of S, a statistical analysis environment developed at Bell Laboratories -- part of AT&amp;T -- in the 1970s.
+
+
+---
+class: top
+.my-header[
+.title[
+What is R?
+]
+]
+
+.absolute.left-2.top--1.mt4[
+&lt;svg class = "fl w-40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="724" height="561" viewBox="0 0 724 561"&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id="gradientFill-1" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad"&gt;
+      &lt;stop offset="0" stop-color="rgb(203,206,208)" stop-opacity="1"/&gt;
+      &lt;stop offset="1" stop-color="rgb(132,131,139)" stop-opacity="1"/&gt;
+    &lt;/linearGradient&gt;
+    &lt;linearGradient id="gradientFill-2" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad"&gt;
+      &lt;stop offset="0" stop-color="rgb(39,109,195)" stop-opacity="1"/&gt;
+      &lt;stop offset="1" stop-color="rgb(22,92,170)" stop-opacity="1"/&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;path d="M361.453,485.937 C162.329,485.937 0.906,377.828 0.906,244.469 C0.906,111.109 162.329,3.000 361.453,3.000 C560.578,3.000 722.000,111.109 722.000,244.469 C722.000,377.828 560.578,485.937 361.453,485.937 ZM416.641,97.406 C265.289,97.406 142.594,171.314 142.594,262.484 C142.594,353.654 265.289,427.562 416.641,427.562 C567.992,427.562 679.687,377.033 679.687,262.484 C679.687,147.971 567.992,97.406 416.641,97.406 Z" fill="url(#gradientFill-1)" fill-rule="evenodd"/&gt;
+  &lt;path d="M550.000,377.000 C550.000,377.000 571.822,383.585 584.500,390.000 C588.899,392.226 596.510,396.668 602.000,402.500 C607.378,408.212 610.000,414.000 610.000,414.000 L696.000,559.000 L557.000,559.062 L492.000,437.000 C492.000,437.000 478.690,414.131 470.500,407.500 C463.668,401.969 460.755,400.000 454.000,400.000 C449.298,400.000 420.974,400.000 420.974,400.000 L421.000,558.974 L298.000,559.026 L298.000,152.938 L545.000,152.938 C545.000,152.938 657.500,154.967 657.500,262.000 C657.500,369.033 550.000,377.000 550.000,377.000 ZM496.500,241.024 L422.037,240.976 L422.000,310.026 L496.500,310.002 C496.500,310.002 531.000,309.895 531.000,274.877 C531.000,239.155 496.500,241.024 496.500,241.024 Z" fill="url(#gradientFill-2)" fill-rule="evenodd"/&gt;
+&lt;/svg&gt;
+
+]
+
+.relative.top-2.mt5.left-2.ml5.f2.tl.lh-title.pt7[
+.relative.top-0.pt3[
+is .strike[a letter between Q and S.]
+]
+]
+
+.relative.left-2.ml5.f2.tl.lh-title[
+.relative.left-2.r-color.top-0[an interpreted, .underline[object-oriented] language.]
+]
+
+???
+In computer land, R is what's known as an interpreted, object oriented language. 
+A descendent of S, a statistical analysis environment developed at Bell Laboratories -- part of AT&amp;T -- in the 1970s.
+
+---
+class: top center
+.my-header[
+.title[What is R?
+]
+]
+
+.absolute.mt5.top-2.measure-narrow.w-80.tl.f2.lh-title.left-2[
+R has recently gained popularity in academia and industry, in part due to its extensive package ecosystem.
+]
+
+--
+
+.absolute.f3.left--2.top--1.pt5.mt7.extra-large-emoji.w-30[📦]
+
+.f2.lh-title.absolute.measure-narrow.left-1.mt4.top--2.pt7.ml6.pl5.tj.w-60[
+Packages bundle code, data, documentation, and tests in a shareable format.
+]
+
+--
+
+.f1.absolute.right-2.large-emoji.w-50.mb4.bottom-2[
+📈 🖼 🕹 
+]
+
+???
+
+Packages exist for everything from implementing hierarchical Bayesian models [@brms] to image manipulation [@magick] and console-based games [@xieaut2020].
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

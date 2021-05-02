@@ -131,7 +131,7 @@ blockquote {
 }
 
 
-/* Lists */
+/* Lists
 ul {
   list-style: none;
 }
@@ -145,7 +145,7 @@ li::before {
 li{
   margin: 10px 0;
 }
-
+*/
 
 /* Font sizes */
 .large { font-size: 130% }
@@ -397,6 +397,16 @@ https://codepen.io/Trinca/pen/NAvpWa */
 }
 
 
+/* Highlight last item from https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset=slides&panelset1=slides2&panelset2=slides3*/
+.highlight-last-item > ul > li,
+.highlight-last-item > ol > li {
+  opacity: 0.5;
+}
+.highlight-last-item > ul > li:last-of-type,
+.highlight-last-item > ol > li:last-of-type {
+  opacity: 1;
+}
+
 .two-by-two {
 display: grid;
 grid-template-rows: 1fr 1fr;
@@ -444,4 +454,37 @@ grid-row-end: 2;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 2;
+}
+
+
+/* Inspired by https://speckyboy.com/html-lists-style/*/
+.gradient-list li {
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.5);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+}
+
+.gradient-list li:after {
+      background: linear-gradient(135deg, aliceblue 0%, DarkTurquoise 100%);
+      box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.15);
+      border-radius: 1rem 1rem 0 1rem;
+      content: '';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -0.25rem;
+      width: 3rem;
+}
+
+.r-color {
+  color: #276dc3;
 }
