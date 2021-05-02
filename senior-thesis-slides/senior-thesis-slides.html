@@ -10,7 +10,7 @@
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x752966062d04b91886c776ba806df58","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b748e70442ad46a5ac1d3cacfbeb7147","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -26,10 +26,6 @@
     <link href="libs/xaringanExtra-search/search.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-search/search.js"></script>
     <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":false,"autoSearch":true}) })</script>
-    <script src="libs/fabric/fabric.min.js"></script>
-    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
     <meta name="description" content=""/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="twitter:title" content="SenioR Thesis"/>
@@ -206,23 +202,455 @@ Talk R 2 Me
 
 
 .f2.lh-copy.mt6.tc.bb.bt.br3.bw2.b--green[
-Websites are .strike[mainly] .r-color[also] built with .strike[three languages] .r-color[R].
+Websites are .strike[mainly] .r-color.fw6.f1[![:annotate -100px](also)] built with .strike[three languages] .r-color.b.f1[![:annotate -150px](R)].
+]
+
+
+.relative.flex.justify-between.top--2.mt5.tc[
+
+.mr2.column.w-33.ph3.bg-washed-green.dark-gray.b--green.ba.bw1.br3.ph3.pv0.shadow-5[
+
+.center.b[HTML]
+
+.f4[Defines the structure of websites.]
+]
+
+.mr2.column.w-33.ph3.bg-washed-green.dark-gray.b--green.ba.bw1.br3.ph3.pv0.shadow-5[
+.center.b[CSS]
+
+.f4[Defines the aesthetics of websites.]
+]
+
+.mr2.column.w-33.ph3.bg-washed-green.dark-gray.b--green.ba.bw1.br3.ph3.pv0.shadow-5[
+.center.b[JavaScript]
+
+.f4[Defines the behavior of websites.]
+
+]
+]
+
+---
+class: top center
+.my-header[
+.title[
+Talk R 2 Me
+]
+]
+
+.f2.lh-copy.mt6.tc.bb.bt.br3.bw2.b--green[
+Websites are .strike[mainly] .r-color.fw6.f1[![:annotate -100px](also)] built with .strike[three languages] .r-color.b.f1[![:annotate -150px](R)].
 ]
 
 .w-25.relative.pt2.top-1[
 ![:shiny]
 ]
 
-.absolute.mt7.left-2.top-2.ml7.pt6.w-60.tl[
+.absolute.mt6.left-2.top-0.ml7.pt7.w-60.tl[
 Shiny allows users to combine R's computational power with the interactivity of web applications.
 ]
 
+---
+class: top center
+.my-header[
+.title[
+Time to ✨shine ✨
+]
+]
+
+&lt;style type="text/css"&gt;
+
+.star-list li {
+  list-style: none;
+  text-indent: 1rem;
+  margin-bottom: 1rem;
+}
+
+.star-list li:before {
+  content: "🌟";
+  margin-right: 1rem;
+}
+&lt;/style&gt;
+
+.left-0.relative.mt6.pb3.pt2.fw4.measure-center.f1.tl.lh-title.avenir[
+"Shiny gives you the ability to pass on some of your .r-color.fw5[R] superpowers to anyone who can use the web."
+
+.tr.right-2.relative.f2.fw3[
+\- Hadley Wickham
+]
+]
+
+???
+
+Why is this important? Well Shiny is used in academia and industry for a whole host of, well, everything. A lot of data analysis pipelines are built with R, where you can connect to a data base, train and run some model, and analyze and visualize your results. 
+
+* Create dashboards that track the model's performance in real time
+* Communicate complex materials to non-technical audiences interactive visualizations
+* Create demos for teaching statistics or data science concepts
+
+---
+class: top center
+.my-header[
+.title[
+Shine bright like a 💎
+]
+]
+
+.mt6.pt2.tl.ba.br3.shadow-3[
+
+
+```r
+ui &lt;- fluidPage(
+  "Hello, World"
+  )
+
+server &lt;- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
+]
+
+---
+class: top center
+.my-header[
+.title[
+Shine bright like a 💎
+]
+]
+
+.mt6.pt2.tl.ba.br3.shadow-3[
+
+
+```r
+*ui &lt;- fluidPage(
+* "Hello, World"
+* )
+
+server &lt;- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
+]
+
+???
+
+The ui or user-interface which describes what you will actually see
+
+---
+class: top center
+.my-header[
+.title[
+Shine bright like a 💎
+]
+]
+
+.mt6.pt2.tl.ba.br3.shadow-3[
+
+
+```r
+ui &lt;- fluidPage( 
+  "Hello, World"
+  ) 
+
+*server &lt;- function(input, output, session) {
+*  
+*} 
+
+shinyApp(ui, server)
+```
+
+]
+
+???
+The server which describes the logic or rules for what happens when you interact with the application.
+
+---
+class: top center
+.my-header[
+.title[
+Shine bright like a 💎
+]
+]
+
+.mt6.pt2.tl.ba.br3.shadow-3[
+
+
+```r
+ui &lt;- fluidPage(
+  "Hello, World" 
+  ) 
+
+server &lt;- function(input, output, session) {
+  
+}
+
+*shinyApp(ui, server)
+```
+
+]
+
+
+???
+
+The command to actually start the application
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+  textInput(inputId = "nameInput", 
+            label = "What is your name?", 
+            value = "World"),
+  textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+  output$name &lt;- renderText({
+    paste0("Hello, ", input$nameInput, ".")
+    })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. 
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+* textInput(inputId = "nameInput",
+            label = "What is your name?", 
+            value = "World"),
+  textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+  output$name &lt;- renderText({
+    paste0("Hello, ", input$nameInput, ".")
+    })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. 
+
+In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
+
+We're specifying that the label should be "What is your name?"
+
+And we're giving it the default value "World"
+
+On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
+
+This output ID (name) is then shown to the user
+
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+  textInput(inputId = "nameInput", 
+*           label = "What is your name?",
+            value = "World"),
+  textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+  output$name &lt;- renderText({
+    paste0("Hello, ", input$nameInput, ".")
+    })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
+
+We're specifying that the label should be "What is your name?"
+
+And we're giving it the default value "World"
+
+On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
+
+This output ID (name) is then shown to the user
+
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+  textInput(inputId = "nameInput", 
+            label = "What is your name?", 
+*           value = "World"),
+  textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+  output$name &lt;- renderText({
+    paste0("Hello, ", input$nameInput, ".")
+    })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
+
+We're specifying that the label should be "What is your name?"
+
+And we're giving it the default value "World"
+
+On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
+
+This output ID (name) is then shown to the user
+
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+  textInput(inputId = "nameInput", 
+            label = "What is your name?", 
+            value = "World"),
+  textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+* output$name &lt;- renderText({
+*   paste0("Hello, ", input$nameInput, ".")
+*   })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
+
+We're specifying that the label should be "What is your name?"
+
+And we're giving it the default value "World"
+
+On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
+
+This output ID (name) is then shown to the user
+
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+
+.tl.f3.mt6.pt2.ba.br3.shadow-3[
+
+```r
+ui &lt;- fluidPage(
+  textInput(inputId = "nameInput", 
+            label = "What is your name?", 
+            value = "World"),
+* textOutput("name")
+)
+
+server &lt;- function(input, output, session) {
+  
+*output$name &lt;- renderText({
+    paste0("Hello, ", input$nameInput, ".")
+    })
+}
+```
+]
+
+???
+Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
+
+We're specifying that the label should be "What is your name?"
+
+And we're giving it the default value "World"
+
+On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
+
+This output ID (name) is then shown to the user
+
+---
+class: top center
+.my-header[
+.title[
+Shine brighter like a 💎
+]
+]
+
+.mt6.ba.br3.pt4[
+![:scale 80%](graphics/shinysurveys/textinput-demo.gif)
+]
+
+???
+
+And when we run this app, it looks something like this.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="my-macros.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
+"highlightStyle": "tomorrow",
 "highlightLines": true,
 "countIncrementalSlides": false
 });

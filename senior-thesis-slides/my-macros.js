@@ -71,3 +71,9 @@ remark.macros.shiny = function() {
 </svg>
   `
 }
+
+remark.macros.annotate = function(marginLeft) {
+  var text = this;
+  return '<span style = "position: absolute; transform: rotate(-5deg); margin-left: ' + marginLeft + '; margin-top: -30px;">' + text + '</span>'
+
+}
