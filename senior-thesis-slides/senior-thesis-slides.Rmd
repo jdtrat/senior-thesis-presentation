@@ -637,4 +637,21 @@ Shine brighter like a `r emo::ji("gem")`
 And when we run this app, it looks something like this. 
 The reason I went through some of these steps is to introduce one of the packages I've worked on this year with Dr. McGowan. It utilizes Shiny to create survey forms that can easily be integrated with data collection pipelines built with R. So, without further ado, I would like to show you our package, shinysurveys!
 
+---
+class: top center
+.my-header[
+.title[
+shinysurveys
+]
+]
 
+.mt5.top-2.left-2.absolute.left.pt3[
+
+.pt1[
+![:scale 40%](graphics/shinysurveys/shinysurveys_hex-4.png)
+]
+.absolute.right-2.tr.w-50.top-2.mt5.pt4.pr4.f2.tj.mr3[
+.underline[shinysurveys] is an easy-to-use, minimalistic package for creating & deploying surveys in R.
+]
+
+]
