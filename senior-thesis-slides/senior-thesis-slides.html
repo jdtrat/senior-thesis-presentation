@@ -10,7 +10,7 @@
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xf076f1778bb48c9b59fb694359cc339","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"bca3867338d949598e92d00ea10a39bf","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -133,24 +133,41 @@ In computer land, R is what's known as an interpreted, object oriented language.
 A descendent of S, a statistical analysis environment developed at Bell Laboratories -- part of AT&amp;T -- in the 1970s.
 
 ---
-class: top center
+class: top center gradient-list
 .my-header[
 .title[Why R?
 ]
 ]
 
-.mt6.top-2.pt2.f2.lh-title.black.ml0[
+--
 
-.gradient-list.can-edit[
+.mt6.top-2.pt2.f2.lh-title.black.ml0[
 * It's free 🤑
-* It is easily extendible with 📦
-* It has a vibrant community of use.r-color.b[R]s
-]
 ]
 
 ???
 
-First and foremost, R is free unlike some other statistical softwares used in academia like SPSS or Stata. Secondly, it's easily extendible and open source. So, as we will see, anyone can develop a package with code that is easily usable by others. Thirdly, it has a vibrant community of users and developers all of whom are super nice. There's a lot of discussion with people of all skill-levels about how to make R the best for the most people.
+First and foremost, R is free unlike some other statistical softwares used in academia like SPSS or Stata.
+
+--
+
+.relative.f2.lh-title.black.ml0[
+* It is easily extendible with 📦
+]
+
+???
+
+Secondly, it's easily extendible and open source. So, as we will see, anyone can develop a package with code that is easily usable by others.
+
+--
+
+.relative.f2.lh-title.black.ml0[
+* It has a vibrant community of use.r-color.b[R]s
+]
+
+???
+
+Thirdly, it has a vibrant community of users and developers all of whom are super nice. There's a lot of discussion with people of all skill-levels about how to make R the best for the most people.
 
 Another benefit, not on the slide because I'm going to get into it more, is R's easy integration with other programming languages. So, R itself is derived from the language S, but its creators Ross Ihaka and Robert Gentleman took lots of inspiration from Scheme. A lot of R is actually written in C and C++ to optimize performance, and there a many packages that help users integrate these languages. 
 
@@ -279,13 +296,75 @@ Time to ✨shine ✨
 ]
 ]
 
+.footnote[
+[Mastering Shiny by Hadley Wickham, 2020](https://mastering-shiny.org/preface.html)
+]
+
+
+
 ???
 
 Why is this important? Well Shiny is used in academia and industry for a whole host of, well, everything. A lot of data analysis pipelines are built with R, where you can connect to a data base, train and run some model, and analyze and visualize your results. 
 
-* Create dashboards that track the model's performance in real time
-* Communicate complex materials to non-technical audiences interactive visualizations
-* Create demos for teaching statistics or data science concepts
+---
+class: top center
+.my-header[
+.title[
+Oooh, ✨shiny ✨
+]
+]
+
+.mt6[
+![](graphics/shinysurveys/shiny-cranlogs-dashboard.gif)
+]
+
+.footnote[
+[Developed by Joe Cheng &amp; Colleagues, RStudio](https://github.com/rstudio/shiny-examples/tree/master/087-crandash)
+]
+
+???
+
+* Create dashboards that track data and/or model metrics in real time
+
+---
+class: top center
+.my-header[
+.title[
+Oooh, ✨shiny ✨
+]
+]
+
+.mt5.pt2[
+![:scale 80%](graphics/shinysurveys/shiny-medical-demo.png)
+]
+
+.footnote[
+[Developed by David Granjon, The Interface Group](https://shiny.rstudio.com/gallery/teach-physiology.html)
+]
+
+???
+
+* Create demos for teaching complex materials
+
+---
+class: top center
+.my-header[
+.title[
+Oooh, ✨shiny ✨
+]
+]
+
+.mt6.pt1[
+![](graphics/shinysurveys/shiny-mri.gif)
+]
+
+.footnote[
+[Developed by Hao Zhuname](https://shiny.rstudio.com/gallery/mri-images.html)
+]
+
+???
+
+* Visualize MRI data
 
 ---
 class: top center
@@ -665,6 +744,150 @@ shinysurveys
 ]
 
 ]
+
+---
+class: center gradient-list
+.my-header[
+.title[
+Why shinysurveys?
+]
+]
+
+.mt5.pt5[
+- Surveys are used across disciplines to gather information
+]
+
+
+???
+
+The overarching theme of my thesis was to develop software that would help professionals, in academia and industry, utilize R more effectively. And a specific focus was for behavioral data collection, which I have been involved with conducting neuroscience research.
+
+
+Surveys are extremely useful tools for gathering information from individuals on a large scale, and they are widely used in a variety of domains.
+
+--
+
+.sub-gradient-list[
+- Correlate behaviors with 🧠 📷 data.
+- Epidemiological questionnaires 📋
+]
+
+???
+
+ My neuroscience research lab, for example, has used surveys in the past to correlate behaviors such as political ideology with nueroimaging data. Within the medical field, there are many epidemiological questionnaires, such as did you get your Covid-19 vaccine?
+
+--
+
+.relative[
+- Existing survey tools don't always integrate well with data analysis pipelines
+]
+
+
+???
+
+So the ability to easily collect and analyze data is important. Google Forms, SurveyMonkey, Qualtrics, all exist for this purpose, but they often don't integrate with existing data analysis or research pipelines. 
+
+As I mentioned, R has become an extremely popular language and so, with the help of Dr. McGowan, we designed {shinysurveys} to streamline this data collection and analysis process.
+
+Well, those of you who were here for Nuri's talk a few minutes ago, might recall the use of a survey module to collect demographic information. That was actually done using {shinysurveys}. 
+
+There's a huge number of applications for our package, and today I'm just going to highlight some of the key design features of it, technical challenges, and next steps.
+
+---
+class: top center
+.my-header[
+.title[
+shhinysurveys
+]
+]
+
+.tl.f3.mt6.pt1.ba.br3.shadow-3[
+
+```r
+library(shinysurveys)
+
+ui &lt;- fluidPage(
+  surveyOutput()
+)
+
+server &lt;- function(input, output, session) {
+ renderSurvey() 
+}
+```
+]
+
+???
+Recalling the basic structure of a shiny application, the user-interface and the server, our package provides two functions. One for each component.
+
+---
+class: top center
+.my-header[
+.title[
+shhinysurveys
+]
+]
+
+.tl.f3.mt6.pt1.ba.br3.shadow-3[
+
+```r
+library(shinysurveys)
+
+ui &lt;- fluidPage(
+* surveyOutput(df = questions,
+*              survey_title = "Hello, World!",
+*              survey_description = "A demo survey")
+)
+
+server &lt;- function(input, output, session) {
+   renderSurvey(df = questions, 
+              theme = "#63B8FF")
+}
+```
+]
+
+???
+In the ui component, you call surveyOutput, which takes in a data frame of questions, and an optional title or description.
+
+
+---
+class: top center
+.my-header[
+.title[
+shhinysurveys
+]
+]
+
+.tl.f3.mt6.pt1.ba.br3.shadow-3[
+
+```r
+library(shinysurveys)
+
+ui &lt;- fluidPage(
+  surveyOutput(df = questions,
+               survey_title = "Hello, World!",
+               survey_description = "A demo survey")
+)
+
+server &lt;- function(input, output, session) {
+*  renderSurvey(df = questions,
+*             theme = "#63B8FF")
+}
+```
+]
+
+???
+In the server component, you call renderSurvey(), which takes in the same data frame of questions, and an optional theme color.
+
+---
+class: top center
+.my-header[
+.title[
+shinysurveys
+]
+]
+
+???
+Now I've been talking about this data frame of questions, what does that mean? 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

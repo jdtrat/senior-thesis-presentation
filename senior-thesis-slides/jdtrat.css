@@ -131,10 +131,12 @@ blockquote {
 }
 
 
-/* Lists
+/* Lists */
 ul {
   list-style: none;
 }
+
+/*
 li::before {
   content: "+";
   color: #A7D5E8;
@@ -484,6 +486,35 @@ grid-row-end: 2;
       top: -0.25rem;
       width: 3rem;
 }
+
+.sub-gradient-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.sub-gradient-list li {
+    list-style: none;
+    background: white;
+    width: 45%;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.5);
+}
+
+.sub-gradient-list li:after {
+      background: linear-gradient(to bottom right, rgb(235, 180, 252) 25.63%, rgb(172, 186, 240) 54.2%, rgb(140, 190, 235) 77.31%, rgb(72, 198, 223) 90.76%, rgb(22, 204, 213) 100%, darkturquoise);
+      box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.15);
+      border-radius: 1rem 1rem 0 1rem;
+      content: '';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -0.25rem;
+      width: 3rem;
+}
+
 
 .r-color {
   color: #276dc3;
