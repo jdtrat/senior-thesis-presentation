@@ -1,0 +1,20 @@
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  background-color: transparent !important;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+  background: white;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.nav-tabs>li {
+  background: white !important;
+}
+
+.nav-tabs>li>a {
+  border: none;
+}
