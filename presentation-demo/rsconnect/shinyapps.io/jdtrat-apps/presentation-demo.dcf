@@ -1,0 +1,12 @@
+name: presentation-demo
+title: presentation-demo
+username:
+account: jdtrat-apps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4080831
+bundleId: 4558520
+url: https://jdtrat-apps.shinyapps.io/presentation-demo/
+when: 1620186933.35613
+asMultiple: FALSE
+asStatic: FALSE
