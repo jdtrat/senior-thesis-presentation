@@ -1,0 +1,3 @@
+question,option,input_type,input_id,dependence,dependence_value,required,required
+What is your favorite food?,NA,text,favorite_food,NA,NA,TRUE,TRUE
+What's your name?,NA,text,name,NA,NA,FALSE,FALSE
