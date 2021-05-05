@@ -466,260 +466,6 @@ The command to actually start the application
 class: top center
 .my-header[
 .title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", 
-            label = "What is your name?", 
-            value = "World"),
-  textOutput("name")
-)
-
-server <- function(input, output, session) {
-  
-  output$name <- renderText({
-    paste0("Hello, ", input$nameInput, ".")
-    })
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. 
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", #<<
-            label = "What is your name?", 
-            value = "World"),
-  textOutput("name")
-)
-
-server <- function(input, output, session) {
-  
-  output$name <- renderText({
-    paste0("Hello, ", input$nameInput, ".")
-    })
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. 
-
-In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
-
-We're specifying that the label should be "What is your name?"
-
-And we're giving it the default value "World"
-
-On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
-
-This output ID (name) is then shown to the user
-
-
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", 
-            label = "What is your name?", #<<
-            value = "World"),
-  textOutput("name")
-)
-
-server <- function(input, output, session) {
-  
-  output$name <- renderText({
-    paste0("Hello, ", input$nameInput, ".")
-    })
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
-
-We're specifying that the label should be "What is your name?"
-
-And we're giving it the default value "World"
-
-On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
-
-This output ID (name) is then shown to the user
-
-
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", 
-            label = "What is your name?", 
-            value = "World"), #<<
-  textOutput("name")
-)
-
-server <- function(input, output, session) {
-  
-  output$name <- renderText({
-    paste0("Hello, ", input$nameInput, ".")
-    })
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
-
-We're specifying that the label should be "What is your name?"
-
-And we're giving it the default value "World"
-
-On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
-
-This output ID (name) is then shown to the user
-
-
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", 
-            label = "What is your name?", 
-            value = "World"),
-  textOutput("name")
-)
-
-server <- function(input, output, session) {
-  
-  output$name <- renderText({ #<<
-    paste0("Hello, ", input$nameInput, ".") #<<
-    }) #<<
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
-
-We're specifying that the label should be "What is your name?"
-
-And we're giving it the default value "World"
-
-On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
-
-This output ID (name) is then shown to the user
-
-
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-
-.tl.f3.mt6.pt2.ba.br3.shadow-3[
-```{r, eval = FALSE}
-
-ui <- fluidPage(
-  textInput(inputId = "nameInput", 
-            label = "What is your name?", 
-            value = "World"),
-  textOutput("name") #<<
-)
-
-server <- function(input, output, session) {
-  
-output$name <- renderText({ #<<
-    paste0("Hello, ", input$nameInput, ".") #<<
-    }) #<<
-}
-
-```
-]
-
-???
-Now here is a slightly more complicated application. In the user-interface, we are defining a text input whose value is tied to the ID "nameInput".
-
-We're specifying that the label should be "What is your name?"
-
-And we're giving it the default value "World"
-
-On the server side, we're specifying the *output* name, as the combination of "Hello, " the input whose value we access with the specific ID, and a ".".
-
-This output ID (name) is then shown to the user
-
----
-class: top center
-.my-header[
-.title[
-Shine brighter like a `r emo::ji("gem")`
-]
-]
-
-.mt6.ba.br3.pt4[
-![:scale 80%](graphics/shinysurveys/textinput-demo.gif)
-]
-
-???
-
-And when we run this app, it looks something like this. 
-The reason I went through some of these steps is to introduce one of the packages I've worked on this year with Dr. McGowan. It utilizes Shiny to create survey forms that can easily be integrated with data collection pipelines built with R. So, without further ado, I would like to show you our package, shinysurveys!
-
----
-class: top center
-.my-header[
-.title[
 shinysurveys
 ]
 ]
@@ -873,5 +619,260 @@ shinysurveys
 ]
 ]
 
+```{r create-questions-df, echo = FALSE}
+
+colors <-c("#f69f8c",
+           "#f6d48c",
+           "#e3f68c",
+           "#aef68c",
+           "#8cf69f",
+           "#8cf6d4",
+           "#f69f8c")
+
+library(kableExtra)
+questions <- data.frame(question = "What is your favorite food?",
+                 option = NA,
+                 input_type = "text",
+                 input_id = "favorite_food",
+                 dependence = NA,
+                 dependence_value = NA,
+                 required = F) %>%
+  dplyr::rename_with(snakecase::to_title_case)
+
+questions_table <- kableExtra::kable(questions, 'html') %>%
+  kable_paper() %>%
+  row_spec(0, bold = TRUE, font_size = "large", underline = TRUE, color = "black", align = "c", ) %>%
+  row_spec(1, align = "c", bold = TRUE) %>%
+  column_spec(1, width = "50em") %>%
+  column_spec(2:7, width = "36em") %>%
+  column_spec(c(2,5,6), color = "red")
+```
+
+.mt6[
+```{r, echo = FALSE}
+questions_table
+```
+]
+
 ???
 Now I've been talking about this data frame of questions, what does that mean? 
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(1, background = '#f69f8c', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt3.black.b--gray.shadow-4.box-color[
+
+The question to be asked.
+
+]
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(2, background = '#f6d48c', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt3.black.b--gray.shadow-4.box-color[
+
+A possible response to the question.
+
+]
+
+
+???
+
+In multiple choice questions, for example, this would be the possible answers. For questions without discrete answers, such as a numeric input, this would be the default option shown on the input. For text inputs, like this one, it is the placeholder value. We can also have it as an NA, meaning no value, and the package will automatically add a placeholder of quote-on-quote "Placeholder."
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(3, background = '#e3f68c', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt3.black.b--gray.shadow-4.box-color[
+
+What type of response is expected? Numeric? Multiple choice? Text?
+
+]
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(4, background = '#aef68c', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt3.black.b--gray.shadow-4.box-color[
+
+A unique identifier that allows the Shiny server to identify the input.
+
+]
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(5, background = '#8cf69f', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt3.black.b--gray.shadow-4.box-color[
+
+The input id of the question this depends upon. 
+
+]
+
+???
+Should this question only appear if a different one has a specific value?
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(6, background = '#8cf6d4', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt5.black.b--gray.shadow-4.box-color[
+
+The value of the dependent question that triggers this one to be shown.
+
+]
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.mt6[
+```{r, echo = FALSE}
+  questions_table %>%
+    column_spec(7, background = '#f69f8c', color = 'black', bold = FALSE)
+```
+]
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+.box-color {background-color: #eee;}
+```
+
+.tc.ph3.ba.bw1.br3.relative.mt5.black.b--gray.shadow-4.box-color[
+
+Should the question be required? .i[`TRUE`] or .i[`FALSE`].
+
+]
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+
+https://bit.ly/3tkosOb
+
+
+???
+
+One of the benefits of our package is that you can store surveys as a csv or excel spreadsheet that can be read into R and create a survey. So, if one wanted to create a survey asking about your favorite food, we could do so with a csv like the table on the last slide. Now, what does a survey like this look like? Well, https://bit.ly/3tkosOb
