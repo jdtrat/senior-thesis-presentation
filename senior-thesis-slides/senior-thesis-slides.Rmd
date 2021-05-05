@@ -533,7 +533,7 @@ There's a huge number of applications for our package, and today I'm just going 
 class: top center
 .my-header[
 .title[
-shhinysurveys
+shinysurveys
 ]
 ]
 
@@ -558,7 +558,7 @@ Recalling the basic structure of a shiny application, the user-interface and the
 class: top center
 .my-header[
 .title[
-shhinysurveys
+shinysurveys
 ]
 ]
 
@@ -587,7 +587,7 @@ In the ui component, you call surveyOutput, which takes in a data frame of quest
 class: top center
 .my-header[
 .title[
-shhinysurveys
+shinysurveys
 ]
 ]
 
@@ -636,7 +636,7 @@ questions <- data.frame(question = "What is your favorite food?",
                  input_id = "favorite_food",
                  dependence = NA,
                  dependence_value = NA,
-                 required = F) %>%
+                 required = TRUE) %>%
   dplyr::rename_with(snakecase::to_title_case)
 
 questions_table <- kableExtra::kable(questions, 'html') %>%
@@ -645,7 +645,8 @@ questions_table <- kableExtra::kable(questions, 'html') %>%
   row_spec(1, align = "c", bold = TRUE) %>%
   column_spec(1, width = "50em") %>%
   column_spec(2:7, width = "36em") %>%
-  column_spec(c(2,5,6), color = "red")
+  column_spec(c(2,5,6), color = "red") %>%
+  column_spec(7, color = "#bc00f5")
 ```
 
 .mt6[
@@ -869,10 +870,140 @@ class: top center
   ]
 ]
 
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+```
 
-https://bit.ly/3tkosOb
-
+.mt6[
+```{r, echo = FALSE}
+questions_table
+```
+]
 
 ???
 
-One of the benefits of our package is that you can store surveys as a csv or excel spreadsheet that can be read into R and create a survey. So, if one wanted to create a survey asking about your favorite food, we could do so with a csv like the table on the last slide. Now, what does a survey like this look like? Well, https://bit.ly/3tkosOb
+We've seen that you can create surveys with a flat file like a csv or excel spreadsheet that can easily be read into R. But what does that look like? Well, consider the question "What is your favorite food?" and let's add another question "What's your name?"
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+
+```{css, echo = FALSE}
+.remark-slide-content {
+  padding: 1em 2em 1em 2em;
+}
+```
+
+.mt6[
+
+```{r, echo = FALSE}
+
+data.frame(question = c("What is your favorite food?",
+                              "What's your name?"),
+                 option = NA,
+                 input_type = "text",
+                 input_id = c("favorite_food", "name"),
+                 dependence = NA,
+                 dependence_value = NA,
+                 required = c(TRUE, FALSE)) %>%
+  dplyr::rename_with(snakecase::to_title_case) %>% 
+  kableExtra::kable('html') %>%
+  kable_paper() %>%
+  row_spec(0, bold = TRUE, font_size = "large", underline = TRUE, color = "black", align = "c") %>%
+  row_spec(c(1,2), align = "c", bold = TRUE) %>%
+  row_spec(2, background = "#FFFFFF") %>%
+  column_spec(c(2,5,6), color = "red") %>%
+  column_spec(7, color = "#bc00f5")
+```
+
+
+]
+
+???
+
+So this is great. We have a data frame, i.e. just a table, that can be saved and shared as a csv or excel spreadsheet, and we can create a survey just by plugging in the code.
+
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+--
+
+.mt6.pt4[
+![](graphics/presentation-questions-csv-screenshot.png)
+]
+
+.relative.tl.f3.ba.br3.shadow-3[
+```{r, eval = FALSE}
+demo_questions <- read.csv("demo-questions.csv")
+```
+
+]
+
+???
+
+To reiterate, here is a screenshot of the csv file, opened in Excel, that contains our two questions.
+
+One of the benefits of our package is that you can store surveys as a csv or excel spreadsheet that can be read into R and create a survey. So, if one wanted to create a survey asking about your favorite food, we could do so with a csv like the table on the last slide. 
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys
+  ]
+]
+
+.tl.f3.relative.ba.br3.shadow-3.mt5.top-1[
+```{r, eval = FALSE}
+library(shiny)
+library(shinysurveys)
+
+demo_questions <- read.csv("demo-questions.csv")
+
+ui <- fluidPage(
+  surveyOutput(df = demo_questions,
+               survey_title = "Hello, World!",
+               survey_description = "A demo survey")
+)
+
+server <- function(input, output, session) {
+   renderSurvey(df = demo_questions,
+              theme = "#63B8FF")
+}
+
+shinyApp(ui, server)
+```
+]
+
+???
+
+Now, what does a survey like this look like? Well, https://bit.ly/3tkosOb
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys demo
+  ]
+]
+
+.mt6[
+![Let's have a look!](https://jdtrat-apps.shinyapps.io/presentation-demo/)
+]
+
+???
+
+https://bit.ly/3tkosOb
