@@ -5,8 +5,9 @@ account: jdtrat-apps
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4080831
-bundleId: 4558520
+bundleId: 4562479
 url: https://jdtrat-apps.shinyapps.io/presentation-demo/
-when: 1620186933.35613
+when: 1620252055.17946
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: www/.DS_Store

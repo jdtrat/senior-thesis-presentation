@@ -9,4 +9,4 @@ options(gargle_oauth_email = TRUE,
 pres_sheet_id <- drive_get("thesis-presentation-demo")$id
 
 # Write initial data to the sheet
-sheet_write(data.frame(favorite_food = "Sushi", name = "Jonathan"), ss = pres_sheet_id, sheet = "Sheet1")
+# sheet_write(data.frame(favorite_food = "Sushi", name = "Jonathan"), ss = pres_sheet_id, sheet = "Sheet1")
