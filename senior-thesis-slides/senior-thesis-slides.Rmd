@@ -55,6 +55,10 @@ class: inverse center middle
 
 ???
 
+Hi! So my name is Jonathan Trattner. I am graduate with a Bachelor’s of Science in Computational Neuroscience. This was an interdisciplinary major and I was able to work with Dr. Lucy D'Agostino McGowan from the Department of Statistics on some really cool applied projects.
+
+The one I'm going to be talking about today is a tool we developed for what's called behavioral data collection in neuroscience-land and surveys or questionnaires everywhere else. Without further ado, I'm just going to jump right into it.
+
 ---
 name: theme
 layout: true
@@ -323,7 +327,7 @@ Oooh, `r emo::ji("sparkles")`shiny `r emo::ji("sparkles")`
 ]
 
 .mt5.pt2[
-![:scale 80%](graphics/shinysurveys/shiny-medical-demo.png)
+![:scale 75%](graphics/shinysurveys/shiny-medical-demo.png)
 ]
 
 .footnote[
@@ -627,7 +631,7 @@ colors <-c("#f69f8c",
            "#aef68c",
            "#8cf69f",
            "#8cf6d4",
-           "#f69f8c")
+           "#8CE3F6")
 
 library(kableExtra)
 questions <- data.frame(question = "What is your favorite food?",
@@ -845,7 +849,7 @@ class: top center
 .mt6[
 ```{r, echo = FALSE}
   questions_table %>%
-    column_spec(7, background = '#f69f8c', color = 'black', bold = FALSE)
+    column_spec(7, background = '#8CE3F6', color = 'black', bold = FALSE)
 ```
 ]
 
@@ -928,7 +932,7 @@ data.frame(question = c("What is your favorite food?",
 
 ???
 
-So this is great. We have a data frame, i.e. just a table, that can be saved and shared as a csv or excel spreadsheet, and we can create a survey just by plugging in the code.
+So this is great. We have a data frame, i.e. a table, that can be saved and shared as a csv or excel spreadsheet, and that's what we can use to define our survey.
 
 
 ---
@@ -941,32 +945,24 @@ class: top center
 
 --
 
-.mt6.pt4[
+.relative.mt7[
 ![](graphics/presentation-questions-csv-screenshot.png)
 ]
 
-.relative.tl.f3.ba.br3.shadow-3[
-```{r, eval = FALSE}
-demo_questions <- read.csv("demo-questions.csv")
-```
-
-]
-
 ???
+So here is just a screenshot of the csv file that I opened in Excel and it contains our two questions. As I mentioned, one of the benefits of our package is that you can easily share these files and read them into R to create a survey.
 
-To reiterate, here is a screenshot of the csv file, opened in Excel, that contains our two questions.
-
-One of the benefits of our package is that you can store surveys as a csv or excel spreadsheet that can be read into R and create a survey. So, if one wanted to create a survey asking about your favorite food, we could do so with a csv like the table on the last slide. 
+So, if one wanted to create a survey asking about favorite foods and names, like we see here, we could do so with this csv. 
 
 ---
 class: top center
 .my-header[
   .title[
-    shinysurveys
+    shinysurveys demo
   ]
 ]
 
-.tl.f3.relative.ba.br3.shadow-3.mt5.top-1[
+.tl.f3.relative.ph1.ba.br3.shadow-3.mt5.top-1[
 ```{r, eval = FALSE}
 library(shiny)
 library(shinysurveys)
@@ -990,7 +986,7 @@ shinyApp(ui, server)
 
 ???
 
-Now, what does a survey like this look like? Well, https://bit.ly/3tkosOb
+So, revisiting our shinysurveys code, we can read in our data like such:
 
 ---
 class: top center
@@ -1000,10 +996,297 @@ class: top center
   ]
 ]
 
-.mt6[
-![Let's have a look!](https://jdtrat-apps.shinyapps.io/presentation-demo/)
+.tl.f3.relative.ph1.ba.br3.shadow-3.mt5.top-1[
+```{r, eval = FALSE}
+library(shiny)
+library(shinysurveys)
+
+demo_questions <- read.csv("demo-questions.csv") #<<
+
+ui <- fluidPage(
+  surveyOutput(df = demo_questions,
+               survey_title = "Hello, World!",
+               survey_description = "A demo survey")
+)
+
+server <- function(input, output, session) {
+   renderSurvey(df = demo_questions)
+}
+
+shinyApp(ui, server)
+```
 ]
 
 ???
 
-https://bit.ly/3tkosOb
+And we pass the data frame of questions to the survey output and render survey functions
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys demo
+  ]
+]
+
+.tl.f3.relative.ph1.ba.br3.shadow-3.mt5.top-1[
+```{r, eval = FALSE}
+library(shiny)
+library(shinysurveys)
+
+demo_questions <- read.csv("demo-questions.csv")
+
+ui <- fluidPage(
+  surveyOutput(df = demo_questions, #<<
+               survey_title = "Hello, World!",
+               survey_description = "A demo survey")
+)
+
+server <- function(input, output, session) {
+   renderSurvey(df = demo_questions) #<<
+}
+
+shinyApp(ui, server)
+```
+]
+
+???
+
+And voila! We're done.
+
+---
+class: top center
+.my-header[
+  .title[
+    shinysurveys demo
+  ]
+]
+
+
+.mt5.pt3.relative.top--1[
+
+<a href = "https://jdtrat-apps.shinyapps.io/presentation-demo/">
+![:scale 80%](graphics/demo-survey-screenshot.png)
+</a>
+]
+
+???
+Let's have a look at what that survey would look like!
+
+
+---
+class: top center gradient-list
+.my-header[
+  .title[
+    Conclusion
+  ]
+]
+
+
+.mt5.top-2.left-2.absolute.left.pt3[
+
+.pt1[
+![:scale 40%](graphics/shinysurveys/shinysurveys_hex-4.png)
+]
+
+]
+
+???
+Today I briefly covered one of the packages I've worked on this year with Dr. McGowan. shinysurveys was designed to help bridge the gap between data collection and data processing that is not as well supported with other options such as Google Forms or Qualtrics. 
+
+---
+class: top center gradient-list
+.my-header[
+  .title[
+    Conclusion
+  ]
+]
+
+
+.mt5.top-2.left-2.absolute.left.pt3[
+
+.pt1[
+![:scale 40%](graphics/shinysurveys/shinysurveys_hex-4.png)
+]
+
+.absolute.right-2.tr.w-50.top-0.mt5.pt4.pr4.tj.mr3[
+.tl[
+- Designed to bridge the gap between data collection and data processing
+]
+]
+]
+
+???
+Today I briefly covered one of the packages I've worked on this year with Dr. McGowan. shinysurveys was designed to help bridge the gap between data collection and data processing that is not as well supported with other options such as Google Forms or Qualtrics. 
+
+
+---
+class: top center gradient-list
+.my-header[
+  .title[
+    Conclusion
+  ]
+]
+
+
+.mt5.top-2.left-2.absolute.left.pt3[
+
+.pt1[
+![:scale 40%](graphics/shinysurveys/shinysurveys_hex-4.png)
+]
+.absolute.right-2.tr.w-50.top-0.mt5.pt4.pr4.mr3[
+
+.tl[
+- Designed to bridge the gap between data collection and data processing
+- Easy to implement and extend
+]
+]
+]
+
+???
+
+As you've seen here today, shinysurveys is straightforward to implement. There are some advanced features such as URL-based user tracking and dependency questions that I did not cover, but are fully documented online, which leads to my last point that it is fully open source! 
+
+---
+class: top center gradient-list
+.my-header[
+  .title[
+    Conclusion
+  ]
+]
+
+
+.mt5.top-2.left-2.absolute.left.pt3[
+
+.pt1[
+![:scale 40%](graphics/shinysurveys/shinysurveys_hex-4.png)
+]
+.absolute.right-2.tr.w-50.top-0.mt5.pt4.pr4.mr3[
+
+.tl[
+- Designed to bridge the gap between data collection and data processing
+- Easy to implement and extend
+- Open source `r emo::ji("computer")`
+]
+]
+
+]
+
+???
+
+shinysurveys is open-source so anyone can look at the code, suggest changes, or modify it themselves for internal purposes. 
+
+In the future, we hope to make it even easier for people to deploy our surveys and are working on developing a GUI, a graphical user interface, similar to Google Forms or Qualtrics that will allow you to simply define your questions and download the R code needed to deploy the code.
+
+---
+class: top center gradient-list
+.my-header[
+  .title[
+    Conclusion
+  ]
+]
+
+```{css, echo = FALSE}
+.black-outline {
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: black;
+}
+```
+
+top-2.mt6.f-subheadline.lh-solid.ba.br3.bg-light-gray.bw1.shadow-5.black-outline[
+
+[senior-thesis.jdtrat.com](https://senior-thesis.jdtrat.com/index.html)
+
+]
+
+???
+
+And just to really wrap it up, I'd like to point anyone interested in this work, or some of the other packages I worked on for my thesis, towards my thesis website, senior-thesis.jdtrat.com.
+
+I go more in-depth into shinysurveys there, as well as provide a more robust background on R and the other packages I worked on. And, most importantly, I thank all of the people who helped shape my academic trajectory. Some of those people are here today, and that leads me to my next slide. There are three people who I'm especially grateful to who helped me hone my R skills and directly led to this thesis project.
+
+---
+class: top center ty-gradient-list
+.my-header[
+.title[
+Thank you `r emo::ji("praise")`
+]
+]
+
+
+```{css, echo = FALSE}
+
+
+/* Inspired by https://speckyboy.com/html-lists-style/*/
+.ty-gradient-list li {
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.5);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+}
+
+.ty-gradient-list li:after {
+      background: linear-gradient(135deg, #95BAFC 0%, DarkTurquoise 100%);
+      box-shadow: 0.075rem 0.1rem 0.05rem 0.05rem rgba(0,0,0,0.15);
+      border-radius: 1rem 1rem 0 1rem;
+      padding-top: 16px;
+      content: '\01F64F';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -0.25rem;
+      width: 3rem;
+}
+
+
+```
+
+.mt6.relative.top-2.w-70.center.pt2[
+
+- Dr. Lucy D'Agostino McGowan
+
+]
+
+???
+
+Dr. Lucy McGowan: She is my thesis advisor through the stats department and helped foster my interest in R and programming in general. 
+
+I learned so much about statistics and R through her statistical learning course, even more as her TA, and still more from working with her. She's been such a huge help and I owe her so much for my current trajectory post-college. So thank you, Dr. McGowan.
+
+--
+
+.relative.w-70.top-2.center[
+- Dr. Ken Kishida
+]
+
+???
+
+Dr. Ken Kishida: He is a professor in the Department of Neuroscience at Wake Forest School of Medicine and I've been doing research with him for the past three plus years. In about a week, I'll be joining his lab full time to pursue a master's, and he's just been super supportive of my endeavors and provided me the space to combine my interests with R, programming, and neuroscience, and I attribute so much to him for my future trajectory as well.
+
+--
+
+.relative.w-70.top-2.center[
+- Dr. Mason Garrison
+]
+
+???
+
+Dr. Mason Garrison: She is a professor of quantitative psychology and I met her randomly right before I went abroad my junior fall, and when I came back we got to chatting about our mutual interests in R, and she took me into her lab and we've produced some really cool R packages. She's really fun to work with and super supportive of my ventures, and yeah. Thank you so much.
+
+And, as I mentioned for a full-list of people who have contributed to my educational maturation, please check out my written thesis at senior-thesis.jdtrat.com. And, now I'll take some questions!
+
+---
+class: inverse center middle
+
+# Questions?
+
+.large-emoji[
+`r emo::ji("raising_hand")`
+]

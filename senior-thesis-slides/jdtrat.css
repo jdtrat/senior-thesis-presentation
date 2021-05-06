@@ -9,19 +9,19 @@ body {
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color: #a99400;
+  color: #9b7c38;
   margin: 1.5em 0 0.5em 0;
   font-size: 12px;
 }
 h1, h3 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  color: #a99400;
+  color: #9b7c38;
   margin: 1.5em 0 0.5em 0;
 }
 a, a > code {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #a99400;
+  color: #9b7c38;
   text-decoration: none;
 }
 
@@ -33,12 +33,12 @@ a, a > code {
 }
 
 .inverse {
-  background-color: #0a0929;
+  background-color: #000000;
   color: #ffffff;
   /* text-shadow: 0 0 20px #333; */
 }
 .inverse h1 {
-  color: #a99400;
+  color: #9b7c38;
   -webkit-text-stroke-width: 0.25px;
   -webkit-text-stroke-color: white;
 }
@@ -88,8 +88,8 @@ a, a > code {
 }
 /* Custom boxes */
 .definition {
-  border-left: solid 5px #a99400;
-  background-color: #a9940050;
+  border-left: solid 5px #9b7c38;
+  background-color: #9b7c3850;
   padding: 1px 16px;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -193,7 +193,7 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
     width: 81px;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("jdtrat_logo_transparent_white_offset.png");
+    background-image: url("wake-logo.svg");
 }
 
 .element.style {
@@ -206,8 +206,8 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
 
 /* Footer */
 div.my-footer {
-    background-color: #0a0929;
-    border-top: 3.6px solid #a99400;
+    background-color: #000000;
+    border-top: 3.6px solid #9b7c38;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -228,7 +228,7 @@ div.my-footer a {
 
 /* Header */
 div.my-header {
-    background-color: #0a0929;
+    background-color: #000000;
     border-bottom: 3.6px solid #a99400;
     position: absolute;
     top: 0px;
@@ -514,7 +514,6 @@ grid-row-end: 2;
       top: -0.25rem;
       width: 3rem;
 }
-
 
 .r-color {
   color: #276dc3;
