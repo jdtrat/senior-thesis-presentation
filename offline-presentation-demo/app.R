@@ -69,7 +69,8 @@ server <- function(input, output) {
         data$food <- values$favorite_food[!is.na(values$favorite_food)]
         data$name <- values$name
 
-
+        # Reset Text Update Manually
+        shiny::updateTextInput(inputId = "name")
 
     })
 
