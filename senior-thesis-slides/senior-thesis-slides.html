@@ -7,10 +7,9 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"aa9eaf51921649ae8c8ed520eb072887","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x8781420ed934ad8a89d4e806803bcd7","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -30,7 +29,7 @@
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="twitter:title" content="SenioR Thesis"/>
     <meta name="twitter:description" content=""/>
-    <meta name="twitter:url" content=""/>
+    <meta name="twitter:url" content="https://www.jdtrat.com/talks/senior-thesis/slides.html"/>
     <meta name="twitter:image:src" content=""/>
     <meta name="twitter:image:alt" content=""/>
     <meta name="twitter:card" content="summary_large_image"/>
@@ -38,7 +37,7 @@
     <meta name="twitter:site" content="@jdtrat"/>
     <meta property="og:title" content="SenioR Thesis"/>
     <meta property="og:description" content=""/>
-    <meta property="og:url" content=""/>
+    <meta property="og:url" content="https://www.jdtrat.com/talks/senior-thesis/slides.html"/>
     <meta property="og:image" content=""/>
     <meta property="og:image:alt" content=""/>
     <meta property="og:type" content="website"/>
@@ -53,7 +52,7 @@
 
 class: inverse center middle
 
-# Senio*R* Thesis
+# Senio.r-color[R] Thesis
 
 .large[Jonathan Trattner | 05-07-2021]
 
@@ -503,6 +502,10 @@ shinysurveys
 
 ]
 
+???
+
+The overarching theme of my thesis was to develop software that would help professionals, in academia and industry, utilize R more effectively. And a specific focus was for behavioral data collection, which I have been involved with conducting neuroscience research.
+
 ---
 class: center gradient-list
 .my-header[
@@ -518,9 +521,6 @@ Why shinysurveys?
 
 ???
 
-The overarching theme of my thesis was to develop software that would help professionals, in academia and industry, utilize R more effectively. And a specific focus was for behavioral data collection, which I have been involved with conducting neuroscience research.
-
-
 Surveys are extremely useful tools for gathering information from individuals on a large scale, and they are widely used in a variety of domains.
 
 --
@@ -532,7 +532,7 @@ Surveys are extremely useful tools for gathering information from individuals on
 
 ???
 
- My neuroscience research lab, for example, has used surveys in the past to correlate behaviors such as political ideology with nueroimaging data. Within the medical field, there are many epidemiological questionnaires, such as did you get your Covid-19 vaccine?
+My neuroscience research lab, for example, has used surveys in the past to correlate behaviors such as political ideology with nueroimaging data. Within the medical field, there are many epidemiological questionnaires, such as did you get your Covid-19 vaccine?
 
 --
 
@@ -1167,7 +1167,7 @@ ui &lt;- fluidPage(
 
 server &lt;- function(input, output, session) {
    renderSurvey(df = demo_questions,
-              theme = "#63B8FF")
+                theme = "#63B8FF")
 }
 
 shinyApp(ui, server)
@@ -1201,7 +1201,8 @@ ui &lt;- fluidPage(
 )
 
 server &lt;- function(input, output, session) {
-   renderSurvey(df = demo_questions)
+   renderSurvey(df = demo_questions,
+                theme = "#63B8FF")
 }
 
 shinyApp(ui, server)
@@ -1234,7 +1235,8 @@ ui &lt;- fluidPage(
 )
 
 server &lt;- function(input, output, session) {
-*  renderSurvey(df = demo_questions)
+*  renderSurvey(df = demo_questions,
+                theme = "#63B8FF")
 }
 
 shinyApp(ui, server)
@@ -1460,7 +1462,7 @@ I learned so much about statistics and R through her statistical learning course
 
 ???
 
-Dr. Ken Kishida: He is a professor in the Department of Neuroscience at Wake Forest School of Medicine and I've been doing research with him for the past three plus years. In about a week, I'll be joining his lab full time to pursue a master's, and he's just been super supportive of my endeavors and provided me the space to combine my interests with R, programming, and neuroscience, and I attribute so much to him for my future trajectory as well.
+Dr. Ken Kishida: He is a professor in the Department of Neuroscience at Wake Forest School of Medicine and I've been doing research with him for the past three plus years. In about a week, I'll be joining his lab full time to pursue a master's, and he's just been super supportive of my endeavors and provided me the space to combine my interests with R, programming, and neuroscience, and I'm excited to see what we come up with over the next year.
 
 --
 
